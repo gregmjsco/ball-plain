@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Container } from "./components/styles/Container.styled";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "./components/styles/Global.js";
+
+const theme = {
+  colors: {
+    header: "#ebfxff",
+    body: "#fff",
+    footer: "#003333",
+  },
+};
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyles />
+        <Container>
+          <h1>Hello World</h1>
+          <h2>Hello World</h2>
+          <h3>Hello World</h3>
+          <p>
+            Duis <a href="#">Lorem laboris</a> sunt duis pariatur do non tempor
+            quis sint eu aliquip. Do nisi labore et anim do eiusmod
+            reprehenderit et. Ea ea irure id consectetur ea. Lorem sunt pariatur
+            occaecat elit adipisicing aute in elit. Amet est excepteur sint
+            Lorem exercitation voluptate in.
+          </p>
+          <button>Hello World</button>
+        </Container>
+      </>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
