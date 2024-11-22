@@ -2,6 +2,14 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 
+    :root {
+        --clr-dark: #030712;
+        --clr-light: #e2e8f0;
+
+        --clr-text: #94a3b8;
+        --clr-muted: #64748b;
+        --clr-slate50: #f8fafc;
+    }
 
     *,
     *::before,
@@ -17,6 +25,8 @@ export const GlobalStyles = createGlobalStyle`
 
     body {
         font-family: "Doto", sans-serif;
+        background-color: var(--clr-dark);
+        color: var(--clr-light);
     }
 
     img,
@@ -261,4 +271,20 @@ summary {
 h1, h2, h3, h4, h5, h6 {
     letter-spacing: -0.025;
 }
+
+
+
+p {
+    color: var(--clr-text);
+}
+
+a {
+    color: var(--clr-slate50);  
+}
+
+strong {
+    color: var(--clr-light);
+    font-weight: 900;
+}
+
 `;
