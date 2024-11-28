@@ -24,7 +24,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body {
-        font-family: "Doto", sans-serif;
+        font-family: "Montserrat", sans-serif;
         background-color: var(--clr-dark);
         color: var(--clr-light);
     }
@@ -285,6 +285,10 @@ a {
 strong {
     color: var(--clr-light);
     font-weight: 900;
+}
+
+.section {
+    margin-top: 5rem;
 }
 
 `;
