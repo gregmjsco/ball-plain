@@ -8,6 +8,10 @@ const theme = {
     header: "#ebfxff",
     body: "#fff",
     footer: "#003333",
+
+    brandHue: 222,
+    brandSaturation: 67,
+    brandLightness: 59,
   },
 
   variables: {
@@ -15,6 +19,11 @@ const theme = {
     "--brand-hue": "222",
     "--brand-saturation": "67%",
     "--brand-lightness": "59%",
+    "--brand-light":
+      "hsl(var(--brand-hue) var(--brand-saturation) var(--brand-lightness))",
+
+    "--brand-dark":
+      "hsl(var(--brand-hue) calc(var(--brand-saturation) / 2) calc(var(--brand-lightness) / 1.5))",
   },
 
   sizes: {

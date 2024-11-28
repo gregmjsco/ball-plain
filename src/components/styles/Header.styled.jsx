@@ -9,6 +9,7 @@ export const StyledHeader = styled.header`
   }
 
   .header__bars {
+    color: var(--brand-dark);
     width: ${({ theme }) => theme.sizes.twoxl};
     height: ${({ theme }) => theme.sizes.twoxl};
   }

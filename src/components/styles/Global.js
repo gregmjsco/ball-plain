@@ -9,6 +9,16 @@ export const GlobalStyles = createGlobalStyle`
         --clr-text: #94a3b8;
         --clr-muted: #64748b;
         --clr-slate50: #f8fafc;
+
+        --brand-hue: ${(props) => props.theme.colors.brandHue};
+        --brand-saturation: ${(props) => props.theme.colors.brandSaturation};
+        --brand-lightness: ${(props) => props.theme.colors.brandLightness};
+    
+        --brand-light: hsl(var(--brand-hue) var(--brand-saturation) var(--brand-lightness));
+         --brand-dark: hsl(
+         var(--brand-hue) 
+      calc(var(--brand-saturation) / 2) 
+      calc(var(--brand-lightness) / 1.5))
     }
 
     *,
