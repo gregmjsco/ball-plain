@@ -4,7 +4,7 @@ import { Container } from "./styles/Container.styled";
 export default function Header() {
   return (
     <StyledHeader>
-      {/* <Container>  */}
+      {/* Mobile Menu */}
       <img
         src="../../public/BALogoMockWhite.png"
         alt="Ball Again logo in white"
@@ -26,7 +26,21 @@ export default function Header() {
           />
         </svg>
       </button>
-      {/* </Container> */}
+
+      {/* Desktop Menu */}
+      <nav className="header__menu">
+        <a
+          href="https://instagram.com"
+          target="blank"
+          rel="noreferrer noopener"
+          title="Instagram"
+          aria-label="Instagram link"
+          className="header__social"
+        >
+          <i aria-hidden="true" className="lni lni-instagram"></i>{" "}
+        </a>
+        <div className="header__separator"></div>
+      </nav>
     </StyledHeader>
   );
 }

@@ -20,6 +20,10 @@ export const StyledHeader = styled.header`
     height: ${({ theme }) => theme.sizes.twoxl};
   }
 
+  .header__menu {
+    display: none;
+  }
+
   /* xs */
   /* @media (min-width: 475px) {} */
 
@@ -30,6 +34,24 @@ export const StyledHeader = styled.header`
   @media (min-width: 768px) {
     .header__bars {
       display: none;
+    }
+
+    .header__menu {
+      display: flex;
+      align-items: center;
+    }
+
+    .header__social {
+      text-decoration: none;
+      font-size: ${({ theme }) => theme.sizes.twoxl};
+      color: var(--brand-dark);
+      line-height: 0;
+      padding: 0.5rem;
+    }
+
+    .header__separator {
+      border: 1px solid var(--brand-dark);
+      padding-top: 1.5rem;
     }
   }
 
