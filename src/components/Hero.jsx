@@ -2,7 +2,7 @@ import { StyledHero } from "./styles/Hero.styled";
 
 export default function Hero() {
   return (
-    <StyledHero>
+    <StyledHero className="hero">
       <img
         className="hero__img"
         src="../../public/BALogoMockWhite.png"

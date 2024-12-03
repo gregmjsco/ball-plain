@@ -3,6 +3,7 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/styles/Global.js";
 import Header from "./components/Header.jsx";
 import Hero from "./components/Hero.jsx";
+import Products from "./components/Products.jsx";
 
 const theme = {
   colors: {
@@ -54,6 +55,7 @@ function App() {
         <Container>
           <Header />
           <Hero />
+          <Products />
         </Container>
       </>
     </ThemeProvider>
