@@ -27,6 +27,16 @@ export const StyledProducts = styled.div`
 
   .list .item:hover {
     filter: brightness(1);
-    transform: translateZ(200px);
+    transform: translateZ(600px);
+  }
+
+  .list .item:hover + * {
+    filter: brightness(0.9);
+    transform: translateZ(150px) rotateY(40deg);
+  }
+
+  .list .item:has(+ *:hover) {
+    filter: brightness(0.9);
+    transform: translateZ(150px) rotateY(-40deg);
   }
 `;
