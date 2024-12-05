@@ -53,6 +53,13 @@ export const StyledHeader = styled.header`
       border: 1px solid var(--brand-dark);
       padding-top: 1.5rem;
     }
+
+    .header__cart-btn {
+      color: var(--brand-dark);
+      font-size: ${({ theme }) => theme.sizes.base};
+      text-decoration: none;
+      font-weight: 700;
+    }
   }
 
   /* lg */

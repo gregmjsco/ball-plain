@@ -49,6 +49,16 @@ export default function Header() {
           <i aria-hidden="true" className="lni lni-instagram"></i>
         </a>
         <div className="header__separator"></div>
+        <a
+          href="#"
+          target="blank"
+          rel="noreferrer noopener"
+          title="Cart"
+          aria-label="Cart link"
+          className="header__social"
+        >
+          <i className="lni lni-cart-2"></i>
+        </a>
       </nav>
     </StyledHeader>
   );
