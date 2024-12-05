@@ -16,7 +16,7 @@ export const StyledHero = styled.section`
   }
 
   .hero__title {
-    font-size: ${({ theme }) => theme.sizes.threexl};
+    font-size: ${({ theme }) => theme.sizes.tenxl};
     font-weight: 900;
     line-height: 1;
   }

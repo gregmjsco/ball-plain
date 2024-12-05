@@ -10,7 +10,7 @@ export default function Hero() {
         width="758"
         height="714"
       />
-      <h1 className="hero__title">Ball Again</h1>
+      <h1 className="hero__title">Ball, Again</h1>
     </StyledHero>
   );
 }
