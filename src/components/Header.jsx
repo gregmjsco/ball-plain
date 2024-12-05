@@ -29,6 +29,16 @@ export default function Header() {
       {/* Desktop Menu */}
       <nav className="header__menu">
         <a
+          href="https://x.com"
+          target="blank"
+          rel="noreferrer noopener"
+          title="twitter"
+          aria-label="Twitter/X link"
+          className="header__social"
+        >
+          <i aria-hidden="true" className="lni lni-x"></i>
+        </a>
+        <a
           href="https://instagram.com"
           target="blank"
           rel="noreferrer noopener"
@@ -36,7 +46,7 @@ export default function Header() {
           aria-label="Instagram link"
           className="header__social"
         >
-          <i aria-hidden="true" className="lni lni-instagram"></i>{" "}
+          <i aria-hidden="true" className="lni lni-instagram"></i>
         </a>
         <div className="header__separator"></div>
       </nav>
