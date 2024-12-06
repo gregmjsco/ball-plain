@@ -8,6 +8,8 @@ export const StyledHeader = styled.header`
   align-items: center;
   padding: 0.5rem;
 
+  border-bottom: 1px solid var(--brand-dark);
+
   .header__logo {
     width: ${({ theme }) => theme.sizes.sevenxl};
     height: ${({ theme }) => theme.sizes.sevenxl};
