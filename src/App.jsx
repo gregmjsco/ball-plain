@@ -5,6 +5,7 @@ import Header from "./components/Header.jsx";
 import Hero from "./components/Hero.jsx";
 import Products from "./components/Products.jsx";
 import Footer from "./components/Footer.jsx";
+import Banner from "./components/Banner.jsx";
 
 const theme = {
   colors: {
@@ -57,6 +58,7 @@ function App() {
           <Header />
           <Hero />
           <Products />
+          <Banner />
           <Footer />
         </Container>
       </>
