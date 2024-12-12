@@ -3,26 +3,30 @@ import { useEffect, useRef } from "react";
 
 export default function Banner() {
   const sliderRef = useRef(null);
+  const nextBtnRef = useRef(null);
 
-  useEffect(() => {
-    let nextBtn = document.getElementById("next");
+  //   useEffect(() => {
+  //     let nextBtn = document.getElementById("next");
+  //     let sliderRef = document.getElementById("slider");
 
-    if (nextBtn) {
-      nextBtn.addEventListener("click", handleNext);
-    }
+  //     if (nextBtn) {
+  //       nextBtn.addEventListener("click", handleNext);
+  //     }
 
-    return () => {
-      if (nextBtn) {
-        nextBtn.removeEventListener("click", handleNext);
-      }
-    };
-  }, []);
+  //     return () => {
+  //       if (nextBtn) {
+  //         nextBtn.removeEventListener("click", handleNext);
+  //       }
+  //     };
+  //   }, []);
 
   const handleNext = () => {
+    console.log("Next button clicked");
     if (sliderRef.current) {
-      sliderRef.current.append(
-        sliderRef.current.querySelector("img:first-child")
-      );
+      const firstImage = sliderRef.current.querySelector("img:first-child");
+      console.log("First image:", firstImage);
+      sliderRef.current.appendChild(firstImage);
+      console.log("Slider children:", sliderRef.current.children);
     }
   };
 
@@ -35,7 +39,7 @@ export default function Banner() {
       </div>
       <div className="arrows">
         <button id="prev">{"<"}</button>
-        <button id="next" onClick={handleNext}>
+        <button id="next" onClick={handleNext} ref={nextBtnRef}>
           {">"}
         </button>
       </div>
