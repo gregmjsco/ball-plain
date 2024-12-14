@@ -1,5 +1,5 @@
 import { StyledBanner } from "./styles/Banner.styled";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 export default function Banner() {
   const sliderRef = useRef(null);
@@ -29,12 +29,22 @@ export default function Banner() {
         <img src="/3.png" alt="" width="997" height="667" />
       </div>
       <div className="arrows">
-        <button id="prev" onClick={handlePrev} ref={prevBtnRef}>
+        <a
+          className="previous round"
+          id="prev"
+          onClick={handlePrev}
+          ref={prevBtnRef}
+        >
           {"<"}
-        </button>
-        <button id="next" onClick={handleNext} ref={nextBtnRef}>
+        </a>
+        <a
+          className="next round"
+          id="next"
+          onClick={handleNext}
+          ref={nextBtnRef}
+        >
           {">"}
-        </button>
+        </a>
       </div>
     </StyledBanner>
   );
