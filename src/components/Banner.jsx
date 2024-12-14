@@ -4,14 +4,20 @@ import { useEffect, useRef } from "react";
 export default function Banner() {
   const sliderRef = useRef(null);
   const nextBtnRef = useRef(null);
+  const prevBtnRef = useRef(null);
 
   const handleNext = () => {
     console.log("Next button clicked");
     if (sliderRef.current) {
       const firstImage = sliderRef.current.querySelector("img:first-child");
-      console.log("First image:", firstImage);
       sliderRef.current.append(firstImage);
-      console.log("Slider children:", sliderRef.current.children);
+    }
+  };
+
+  const handlePrev = () => {
+    if (sliderRef.current) {
+      const lastImage = sliderRef.current.querySelector("img:last-child");
+      sliderRef.current.prepend(lastImage);
     }
   };
 
@@ -23,7 +29,9 @@ export default function Banner() {
         <img src="/3.png" alt="" width="997" height="667" />
       </div>
       <div className="arrows">
-        <button id="prev">{"<"}</button>
+        <button id="prev" onClick={handlePrev} ref={prevBtnRef}>
+          {"<"}
+        </button>
         <button id="next" onClick={handleNext} ref={nextBtnRef}>
           {">"}
         </button>
