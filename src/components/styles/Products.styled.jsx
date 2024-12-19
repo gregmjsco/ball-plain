@@ -24,7 +24,7 @@ export const StyledProducts = styled.div`
     transform: perspective(10000px);
   }
 
-  .list .item {
+  /* .list .item {
     transition: 0.5s;
     filter: brightness(0.8);
   }
@@ -42,7 +42,7 @@ export const StyledProducts = styled.div`
   .list .item:has(+ *:hover) {
     filter: brightness(0.9);
     transform: translateZ(150px) rotateY(-40deg);
-  }
+  } */
 
   /* xs */
   /* @media (min-width: 475px) {} */

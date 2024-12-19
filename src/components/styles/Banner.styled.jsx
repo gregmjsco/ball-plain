@@ -4,7 +4,8 @@ export const StyledBanner = styled.div`
   position: relative;
 
   .slider {
-    /* position: relative; */
+    display: flex;
+    justify-content: center;
   }
 
   .slider img {
