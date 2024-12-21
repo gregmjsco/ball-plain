@@ -73,3 +73,20 @@ export const StyledHeader = styled.header`
   /* 2xl */
   /* @media (min-width: 1536px) {} */
 `;
+
+export const StyledMobileHeader = styled.div`
+  border: 5px solid red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--brand-dark);
+  z-index: 9;
+
+  .mobile-nav__logo {
+    width: ${({ theme }) => theme.sizes.sevenxl};
+    height: ${({ theme }) => theme.sizes.sevenxl};
+    object-fit: cover;
+  }
+`;
