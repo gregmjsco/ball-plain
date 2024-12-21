@@ -75,7 +75,6 @@ export const StyledHeader = styled.header`
 `;
 
 export const StyledMobileHeader = styled.div`
-  border: 5px solid red;
   position: fixed;
   top: 0;
   left: 0;
@@ -84,7 +83,7 @@ export const StyledMobileHeader = styled.div`
   background-color: var(--brand-dark);
   z-index: 9;
 
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;

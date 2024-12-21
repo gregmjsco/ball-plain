@@ -1,6 +1,17 @@
 import { StyledHeader, StyledMobileHeader } from "./styles/Header.styled";
 
 export default function Header() {
+  const barsBtn = document.querySelector("#bars-btn");
+  const mobileNav = document.querySelector("#mobile-nav");
+
+  const handleBarsBtn = () => {
+    mobileNav.style.display = "flex";
+  };
+
+  const handleCloseBtn = () => {
+    mobileNav.style.display = "none";
+  };
+
   return (
     <>
       <StyledHeader>
@@ -12,7 +23,12 @@ export default function Header() {
           height="714"
           className="header__logo"
         />
-        <button className="header__bars" aria-label="menu button">
+        <button
+          onClick={handleBarsBtn}
+          id="bars-btn"
+          className="header__bars"
+          aria-label="menu button"
+        >
           <svg
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
@@ -62,8 +78,14 @@ export default function Header() {
           </a>
         </nav>
       </StyledHeader>
-      <StyledMobileHeader>
-        <button className="mobile-nav__close-btn">Close</button>
+      <StyledMobileHeader id="mobile-nav">
+        <button
+          id="close-btn"
+          className="mobile-nav__close-btn"
+          onClick={handleCloseBtn}
+        >
+          Close
+        </button>
         <img
           src="../../public/BALogoMockWhite.png"
           alt="Ball Again logo in white"
