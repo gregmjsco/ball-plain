@@ -68,7 +68,7 @@ export default function Header() {
           alt="Ball Again logo in white"
           width="758"
           height="714"
-          className="mobile-nav_logo"
+          className="mobile-nav__logo"
         />
         <div className="mobile-nav__social-container">
           <a
@@ -91,19 +91,18 @@ export default function Header() {
           >
             <i aria-hidden="true" className="lni lni-instagram"></i>
           </a>
-          <div className="header__separator"></div>
-          <a
-            href="#"
-            target="blank"
-            rel="noreferrer noopener"
-            title="Cart"
-            aria-label="Cart link"
-            className="mobile-nav__social"
-          >
-            <i className="lni lni-cart-2"></i>
-          </a>
         </div>
         <div className="mobile-nav__separator"></div>
+        <a
+          href="#"
+          target="blank"
+          rel="noreferrer noopener"
+          title="Cart"
+          aria-label="Cart link"
+          className="mobile-nav__social"
+        >
+          <i className="lni lni-cart-2"></i>
+        </a>
       </StyledMobileHeader>
     </>
   );

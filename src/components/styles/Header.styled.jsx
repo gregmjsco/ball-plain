@@ -84,9 +84,25 @@ export const StyledMobileHeader = styled.div`
   background-color: var(--brand-dark);
   z-index: 9;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
   .mobile-nav__logo {
     width: ${({ theme }) => theme.sizes.sevenxl};
     height: ${({ theme }) => theme.sizes.sevenxl};
     object-fit: cover;
+  }
+
+  .mobile-nav__social-container {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .mobile-nav__separator {
+    border: 1px solid white;
+    padding-right: 1.5rem;
   }
 `;
