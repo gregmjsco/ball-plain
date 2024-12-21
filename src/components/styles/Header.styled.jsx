@@ -76,7 +76,7 @@ export const StyledHeader = styled.header`
 
 export const StyledMobileHeader = styled.div`
   border: 5px solid red;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -104,5 +104,12 @@ export const StyledMobileHeader = styled.div`
   .mobile-nav__separator {
     border: 1px solid white;
     padding-right: 1.5rem;
+  }
+
+  .mobile-nav__close-btn {
+    position: absolute;
+    top: 30px;
+    right: 15px;
+    text-transform: uppercase;
   }
 `;

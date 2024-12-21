@@ -63,6 +63,7 @@ export default function Header() {
         </nav>
       </StyledHeader>
       <StyledMobileHeader>
+        <button className="mobile-nav__close-btn">Close</button>
         <img
           src="../../public/BALogoMockWhite.png"
           alt="Ball Again logo in white"
