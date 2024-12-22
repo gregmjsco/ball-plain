@@ -24,7 +24,7 @@ export const StyledBanner = styled.div`
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
-    z-index: 10;
+    z-index: 5;
     pointer-events: none;
   }
 

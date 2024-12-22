@@ -1,15 +1,15 @@
 import { StyledHeader, StyledMobileHeader } from "./styles/Header.styled";
+import { useState } from "react";
 
 export default function Header() {
-  const barsBtn = document.querySelector("#bars-btn");
-  const mobileNav = document.querySelector("#mobile-nav");
+  const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
 
   const handleBarsBtn = () => {
-    mobileNav.style.display = "flex";
+    setIsMobileNavVisible(true);
   };
 
   const handleCloseBtn = () => {
-    mobileNav.style.display = "none";
+    setIsMobileNavVisible(false);
   };
 
   return (
@@ -78,7 +78,10 @@ export default function Header() {
           </a>
         </nav>
       </StyledHeader>
-      <StyledMobileHeader id="mobile-nav">
+      <StyledMobileHeader
+        id="mobile-nav"
+        style={{ display: isMobileNavVisible ? "flex" : "none" }}
+      >
         <button
           id="close-btn"
           className="mobile-nav__close-btn"
