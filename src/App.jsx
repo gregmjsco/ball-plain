@@ -6,6 +6,7 @@ import Hero from "./components/Hero.jsx";
 import Products from "./components/Products.jsx";
 import Footer from "./components/Footer.jsx";
 import Banner from "./components/Banner.jsx";
+import Accordian from "./components/Accordian.jsx";
 
 const theme = {
   colors: {
@@ -59,6 +60,7 @@ function App() {
           <Hero />
           <Products />
           <Banner />
+          <Accordian />
           <Footer />
         </Container>
       </>
