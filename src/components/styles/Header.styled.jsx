@@ -112,3 +112,55 @@ export const StyledMobileHeader = styled.div`
     text-transform: uppercase;
   }
 `;
+
+export const StyledDialog = styled.dialog`
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  border: none;
+  display: none;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow-y: auto;
+  margin: auto;
+  z-index: 1000;
+
+  &[open] {
+    display: block;
+  }
+`;
+
+export const StyledDialogContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 10px;
+`;
+
+export const StyledCloseBtn = styled.button`
+  background-color: #f00;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 4px;
+  font-size: 1rem;
+`;
+
+export const CartItemList = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+`;
+
+export const CartItem = styled.li`
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333;
+`;

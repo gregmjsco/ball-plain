@@ -1,8 +1,17 @@
-import { StyledHeader, StyledMobileHeader } from "./styles/Header.styled";
-import { useState } from "react";
+import {
+  StyledHeader,
+  StyledMobileHeader,
+  StyledDialog,
+  StyledDialogContent,
+  StyledCloseBtn,
+  CartItemList,
+  CartItem,
+} from "./styles/Header.styled";
+import { useState, useRef } from "react";
 
 export default function Header() {
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
+  const dialogRef = useRef(null);
 
   const handleBarsBtn = () => {
     setIsMobileNavVisible(true);
@@ -13,14 +22,12 @@ export default function Header() {
   };
 
   const openCartModal = () => {
-    const dialog = document.getElementById("cart-dialog");
-    dialog.showModal(); // Show the dialog modal
+    dialogRef.current.showModal();
   };
 
   // Function to close the dialog
   const closeCartModal = () => {
-    const dialog = document.getElementById("cart-dialog");
-    dialog.close(); // Close the dialog modal
+    dialogRef.current.close();
   };
 
   return (
@@ -91,19 +98,16 @@ export default function Header() {
         </nav>
       </StyledHeader>
 
-      <dialog id="cart-dialog" className="cart-dialog">
-        <div className="cart-dialog__content">
-          <button
-            onClick={closeCartModal} // Close the cart modal
-            className="cart-dialog__close-btn"
-            aria-label="Close cart"
-          >
-            Close
-          </button>
-          <h2>Your Cart</h2>
-          <p>Here you can display the items in the cart.</p>
-        </div>
-      </dialog>
+      <StyledDialog ref={dialogRef}>
+        <StyledDialogContent>
+          <StyledCloseBtn onClick={closeCartModal}>Close</StyledCloseBtn>
+          <h2>Cart</h2>
+          <CartItemList>
+            <CartItem>Item 1 - $20</CartItem>
+            <CartItem>Item 2 - $30</CartItem>
+          </CartItemList>
+        </StyledDialogContent>
+      </StyledDialog>
 
       <StyledMobileHeader
         id="mobile-nav"
