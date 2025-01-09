@@ -3,6 +3,7 @@ import { useState } from "react";
 
 export default function Header() {
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
+  const [isCartModalVisible, setIsCartModalVisible] = useState(false);
 
   const handleBarsBtn = () => {
     setIsMobileNavVisible(true);
@@ -10,6 +11,14 @@ export default function Header() {
 
   const handleCloseBtn = () => {
     setIsMobileNavVisible(false);
+  };
+
+  const toggleCartModal = () => {
+    setIsCartModalVisible((prev) => !prev);
+  };
+
+  const closeCartModal = () => {
+    setIsCartModalVisible(false);
   };
 
   return (
@@ -69,6 +78,7 @@ export default function Header() {
           <a
             href="#"
             target="blank"
+            onClick={toggleCartModal}
             rel="noreferrer noopener"
             title="Cart"
             aria-label="Cart link"
@@ -78,6 +88,19 @@ export default function Header() {
           </a>
         </nav>
       </StyledHeader>
+
+      {isCartModalVisible && (
+        <div className="cart-modal">
+          <div className="cart-modal__content">
+            <button onClick={closeCartModal} className="cart-modal__close-btn">
+              Close
+            </button>
+            <h2>Cart</h2>
+            <p>Contents for cart, if any</p>
+          </div>
+        </div>
+      )}
+
       <StyledMobileHeader
         id="mobile-nav"
         style={{ display: isMobileNavVisible ? "flex" : "none" }}
@@ -122,6 +145,7 @@ export default function Header() {
         <a
           href="#"
           target="blank"
+          onClick={toggleCartModal}
           rel="noreferrer noopener"
           title="Cart"
           aria-label="Cart link"
