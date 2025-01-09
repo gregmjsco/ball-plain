@@ -3,7 +3,6 @@ import { useState } from "react";
 
 export default function Header() {
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
-  const [isCartModalVisible, setIsCartModalVisible] = useState(false);
 
   const handleBarsBtn = () => {
     setIsMobileNavVisible(true);
@@ -13,12 +12,15 @@ export default function Header() {
     setIsMobileNavVisible(false);
   };
 
-  const toggleCartModal = () => {
-    setIsCartModalVisible((prev) => !prev);
+  const openCartModal = () => {
+    const dialog = document.getElementById("cart-dialog");
+    dialog.showModal(); // Show the dialog modal
   };
 
+  // Function to close the dialog
   const closeCartModal = () => {
-    setIsCartModalVisible(false);
+    const dialog = document.getElementById("cart-dialog");
+    dialog.close(); // Close the dialog modal
   };
 
   return (
@@ -78,7 +80,7 @@ export default function Header() {
           <a
             href="#"
             target="blank"
-            onClick={toggleCartModal}
+            onClick={openCartModal}
             rel="noreferrer noopener"
             title="Cart"
             aria-label="Cart link"
@@ -89,17 +91,19 @@ export default function Header() {
         </nav>
       </StyledHeader>
 
-      {isCartModalVisible && (
-        <div className="cart-modal">
-          <div className="cart-modal__content">
-            <button onClick={closeCartModal} className="cart-modal__close-btn">
-              Close
-            </button>
-            <h2>Cart</h2>
-            <p>Contents for cart, if any</p>
-          </div>
+      <dialog id="cart-dialog" className="cart-dialog">
+        <div className="cart-dialog__content">
+          <button
+            onClick={closeCartModal} // Close the cart modal
+            className="cart-dialog__close-btn"
+            aria-label="Close cart"
+          >
+            Close
+          </button>
+          <h2>Your Cart</h2>
+          <p>Here you can display the items in the cart.</p>
         </div>
-      )}
+      </dialog>
 
       <StyledMobileHeader
         id="mobile-nav"
@@ -145,7 +149,7 @@ export default function Header() {
         <a
           href="#"
           target="blank"
-          onClick={toggleCartModal}
+          onClick={openCartModal}
           rel="noreferrer noopener"
           title="Cart"
           aria-label="Cart link"
