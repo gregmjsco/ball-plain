@@ -7,7 +7,6 @@ import Products from "./components/Products.jsx";
 import Footer from "./components/Footer.jsx";
 import Banner from "./components/Banner.jsx";
 import Accordian from "./components/Accordian.jsx";
-import CartProvider from "./CartContext.jsx";
 
 const theme = {
   colors: {
@@ -53,21 +52,19 @@ const theme = {
 
 function App() {
   return (
-    <CartProvider>
-      <ThemeProvider theme={theme}>
-        <>
-          <GlobalStyles />
-          <Container>
-            <Header />
-            <Hero />
-            <Products />
-            <Banner />
-            <Accordian />
-            <Footer />
-          </Container>
-        </>
-      </ThemeProvider>
-    </CartProvider>
+    <ThemeProvider theme={theme}>
+      <>
+        <GlobalStyles />
+        <Container>
+          <Header />
+          <Hero />
+          <Products />
+          <Banner />
+          <Accordian />
+          <Footer />
+        </Container>
+      </>
+    </ThemeProvider>
   );
 }
 

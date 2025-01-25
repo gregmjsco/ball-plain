@@ -24,6 +24,10 @@ export const StyledProducts = styled.div`
     transform: perspective(10000px);
   }
 
+  .title {
+    text-align: center;
+  }
+
   /* .list .item {
     transition: 0.5s;
     filter: brightness(0.8);

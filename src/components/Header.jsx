@@ -1,17 +1,10 @@
-import {
-  StyledHeader,
-  StyledMobileHeader,
-  StyledDialog,
-  StyledDialogContent,
-  StyledCloseBtn,
-  CartItemList,
-  CartItem,
-} from "./styles/Header.styled";
-import { useState, useRef } from "react";
+import { StyledHeader, StyledMobileHeader } from "./styles/Header.styled";
+import { useState } from "react";
+import Modal from "./Modal";
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
-  const dialogRef = useRef(null);
 
   const handleBarsBtn = () => {
     setIsMobileNavVisible(true);
@@ -21,14 +14,8 @@ export default function Header() {
     setIsMobileNavVisible(false);
   };
 
-  const openCartModal = () => {
-    dialogRef.current.showModal();
-  };
-
-  // Function to close the dialog
-  const closeCartModal = () => {
-    dialogRef.current.close();
-  };
+  const handleOpen = () => setIsOpen(true);
+  const handleClose = () => setIsOpen(false);
 
   return (
     <>
@@ -84,30 +71,16 @@ export default function Header() {
             <i aria-hidden="true" className="lni lni-instagram"></i>
           </a>
           <div className="header__separator"></div>
-          <a
-            href="#"
-            target="blank"
-            onClick={openCartModal}
-            rel="noreferrer noopener"
-            title="Cart"
-            aria-label="Cart link"
-            className="header__social"
-          >
-            <i className="lni lni-cart-2"></i>
-          </a>
+
+          <button onClick={handleOpen}>Cart</button>
+          {isOpen && (
+            <Modal onClose={handleClose}>
+              <h1>Shopping Cart</h1>
+              <p>Shoppinc Cart placeholder</p>
+            </Modal>
+          )}
         </nav>
       </StyledHeader>
-
-      <StyledDialog ref={dialogRef}>
-        <StyledDialogContent>
-          <StyledCloseBtn onClick={closeCartModal}>Close</StyledCloseBtn>
-          <h2>Cart</h2>
-          <CartItemList>
-            <CartItem>Item 1 - $20</CartItem>
-            <CartItem>Item 2 - $30</CartItem>
-          </CartItemList>
-        </StyledDialogContent>
-      </StyledDialog>
 
       <StyledMobileHeader
         id="mobile-nav"
@@ -150,17 +123,6 @@ export default function Header() {
           </a>
         </div>
         <div className="mobile-nav__separator"></div>
-        <a
-          href="#"
-          target="blank"
-          onClick={openCartModal}
-          rel="noreferrer noopener"
-          title="Cart"
-          aria-label="Cart link"
-          className="mobile-nav__social"
-        >
-          <i className="lni lni-cart-2"></i>
-        </a>
       </StyledMobileHeader>
     </>
   );
