@@ -8,7 +8,6 @@ export default function ProductCard(props) {
   const cart = useContext(CartContext);
   const productQuantity = cart.getProductQuantity(product.id);
 
-  console.log(product.id);
   console.log(cart.items);
 
   return (
@@ -26,9 +25,19 @@ export default function ProductCard(props) {
         />
         <h3>{product.title}</h3>
         <p>¥{product.price}</p>
-        <button onClick={() => cart.addOneToCart(product.id)}>
-          Add to Cart
-        </button>
+        {productQuantity > 0 ? (
+          <div className="changeQuantity">
+            <button onClick={() => cart.removeOneFromCart(product.id)}>
+              -
+            </button>
+            <p>{productQuantity}</p>
+            <button onClick={() => cart.addOneToCart(product.id)}>+</button>
+          </div>
+        ) : (
+          <button onClick={() => cart.addOneToCart(product.id)}>
+            Add to Cart
+          </button>
+        )}
       </motion.div>
     </StyledCard>
   );

@@ -52,4 +52,12 @@ export const StyledCard = styled.div`
   &:hover {
     transform: translateY(-10px);
   }
+
+  .changeQuantity {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
 `;
