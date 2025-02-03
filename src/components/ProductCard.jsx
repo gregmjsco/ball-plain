@@ -1,7 +1,16 @@
 import { StyledCard } from "./styles/ProductCard.styled";
 import { motion } from "framer-motion";
+import { CartContext } from "../CartContext";
+import { useContext } from "react";
 
-export default function ProductCard({ product }) {
+export default function ProductCard(props) {
+  const product = props.product;
+  const cart = useContext(CartContext);
+  const productQuantity = cart.getProductQuantity(product.id);
+
+  console.log(product.id);
+  console.log(cart.items);
+
   return (
     <StyledCard>
       <motion.div
@@ -17,7 +26,9 @@ export default function ProductCard({ product }) {
         />
         <h3>{product.title}</h3>
         <p>¥{product.price}</p>
-        <button>Add to Cart</button>
+        <button onClick={() => cart.addOneToCart(product.id)}>
+          Add to Cart
+        </button>
       </motion.div>
     </StyledCard>
   );

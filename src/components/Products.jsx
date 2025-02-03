@@ -13,6 +13,7 @@ export default function Products() {
             product={product}
             title={product.title}
             source={product.source}
+            id={product.id}
           />
         ))}
       </div>
