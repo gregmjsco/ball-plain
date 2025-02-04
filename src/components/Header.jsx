@@ -1,10 +1,18 @@
 import { StyledHeader, StyledMobileHeader } from "./styles/Header.styled";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Modal from "./Modal";
+import { CartContext } from "../CartContext";
 
 export default function Header() {
+  const cart = useContext(CartContext);
+
   const [isOpen, setIsOpen] = useState(false);
   const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
+
+  const productsCount = cart.items.reduce(
+    (sum, product) => sum + product.quantity,
+    0
+  );
 
   const handleBarsBtn = () => {
     setIsMobileNavVisible(true);
@@ -72,7 +80,7 @@ export default function Header() {
           </a>
           <div className="header__separator"></div>
 
-          <button onClick={handleOpen}>Cart</button>
+          <button onClick={handleOpen}>Cart ({productsCount} Items)</button>
           {isOpen && (
             <Modal onClose={handleClose}>
               <h1>Shopping Cart</h1>
