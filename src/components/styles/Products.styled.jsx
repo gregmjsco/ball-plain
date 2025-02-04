@@ -60,7 +60,7 @@ export const StyledProducts = styled.div`
   /* lg */
   @media (min-width: 1024px) {
     .list {
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       padding: 20px;
       grid-auto-rows: 1fr;

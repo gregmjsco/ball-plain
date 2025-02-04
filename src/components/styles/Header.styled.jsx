@@ -26,6 +26,11 @@ export const StyledHeader = styled.header`
     display: none;
   }
 
+  .header__cart-btn {
+    background-color: ${({ theme }) => theme.colors.brand};
+    color: white;
+  }
+
   /* xs */
   /* @media (min-width: 475px) {} */
 
@@ -57,10 +62,14 @@ export const StyledHeader = styled.header`
     }
 
     .header__cart-btn {
-      color: var(--brand-dark);
+      background-color: var(--brand-dark);
+      color: white;
       font-size: ${({ theme }) => theme.sizes.base};
       text-decoration: none;
       font-weight: 700;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      margin-left: 1rem;
     }
   }
 

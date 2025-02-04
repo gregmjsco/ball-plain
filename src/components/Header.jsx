@@ -82,7 +82,9 @@ export default function Header() {
           </a>
           <div className="header__separator"></div>
 
-          <button onClick={handleOpen}>Cart ({productsCount} Items)</button>
+          <button className="header__cart-btn" onClick={handleOpen}>
+            Cart ({productsCount} Items)
+          </button>
           {isOpen && (
             <Modal onClose={handleClose}>
               <h1>Shopping Cart</h1>
