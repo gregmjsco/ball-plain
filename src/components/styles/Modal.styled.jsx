@@ -12,7 +12,7 @@ export const StyledModal = styled.dialog`
   padding: 32px;
   z-index: 9999;
 
-  button {
+  .modal-close-btn {
     position: absolute;
     top: 16px;
     right: 16px;
@@ -26,5 +26,17 @@ export const StyledModal = styled.dialog`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .modal-purchase-btn {
+    margin-top: 1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
 `;

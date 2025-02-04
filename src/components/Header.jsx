@@ -102,6 +102,8 @@ export default function Header() {
               ) : (
                 <h1>Cart Empty</h1>
               )}
+              <hr></hr>
+              <button className="modal-purchase-btn">Purchase</button>
             </Modal>
           )}
         </nav>
