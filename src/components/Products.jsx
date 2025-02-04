@@ -14,6 +14,7 @@ export default function Products() {
             title={product.title}
             source={product.source}
             id={product.id}
+            className="product-card"
           />
         ))}
       </div>

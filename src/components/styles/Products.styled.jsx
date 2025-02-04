@@ -11,14 +11,14 @@ export const StyledProducts = styled.div`
   }
 
   .list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+    display: grid;
+    width: 100%;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1rem;
 
-    width: 100%;
-    height: 80vh;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 
     transform-style: preserve-3d;
     transform: perspective(10000px);
@@ -58,7 +58,14 @@ export const StyledProducts = styled.div`
   /* @media (min-width: 768px) {} */
 
   /* lg */
-  /* @media (min-width: 1024px) {} */
+  @media (min-width: 1024px) {
+    .list {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      grid-auto-rows: 1fr;
+    }
+  }
 
   /* xl */
   /* @media (min-width: 1280px) {} */
