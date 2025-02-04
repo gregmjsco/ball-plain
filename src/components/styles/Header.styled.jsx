@@ -114,11 +114,18 @@ export const StyledMobileHeader = styled.div`
     padding-right: 1.5rem;
   }
 
-  .mobile-nav__close-btn {
-    position: absolute;
-    top: 30px;
-    right: 15px;
-    text-transform: uppercase;
+  .mobile-header__cart-btn {
+    position: fixed;
+    top: 20px; /* Adjusts the distance from the top */
+    right: 20px; /* Adjusts the distance from the right */
+    background-color: ${({ theme }) => theme.colors.brand}; /* Brand color */
+    color: white; /* Text color */
+    font-size: ${({ theme }) => theme.sizes.base};
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10; /* Ensures it's on top of other elements */
   }
 `;
 

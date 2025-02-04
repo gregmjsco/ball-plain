@@ -57,6 +57,9 @@ export default function Header() {
             />
           </svg>
         </button>
+        <button className="mobile-header__cart-btn" onClick={handleOpen}>
+          Cart ({productsCount} Items)
+        </button>
 
         {/* Desktop Menu */}
         <nav className="header__menu">
