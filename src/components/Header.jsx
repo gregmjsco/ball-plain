@@ -2,6 +2,8 @@ import { StyledHeader, StyledMobileHeader } from "./styles/Header.styled";
 import { useState, useContext } from "react";
 import Modal from "./Modal";
 import { CartContext } from "../CartContext";
+import { h1 } from "motion/react-client";
+import CartProduct from "./CartProduct";
 
 export default function Header() {
   const cart = useContext(CartContext);
@@ -84,7 +86,22 @@ export default function Header() {
           {isOpen && (
             <Modal onClose={handleClose}>
               <h1>Shopping Cart</h1>
-              <p>Shoppinc Cart placeholder</p>
+              {productsCount > 0 ? (
+                <>
+                  <p>Items in Cart:</p>
+                  {cart.items.map((currentProduct, index) => (
+                    <CartProduct
+                      id={currentProduct.id}
+                      quantity={currentProduct.quantity}
+                      key={index}
+                    ></CartProduct>
+                  ))}
+
+                  <h1>Total: ¥{cart.getTotalCost().toFixed(2)}</h1>
+                </>
+              ) : (
+                <h1>Cart Empty</h1>
+              )}
             </Modal>
           )}
         </nav>
