@@ -5,7 +5,7 @@ export const Container = styled.div`
   margin-inline: auto;
   padding-inline: 0.5rem;
 
-  border: 1px solid red;
+  /* border: 1px solid red; */
 
   /* xs */
   @media (min-width: 475px) {
