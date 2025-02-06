@@ -29,7 +29,7 @@ export default function Header() {
 
   return (
     <>
-      <StyledHeader>
+      <StyledHeader className={isMobileNavVisible ? "mobile-menu-open" : ""}>
         {/* Mobile Menu */}
         <img
           src="../../public/BALogoMockWhite.png"

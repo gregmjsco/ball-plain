@@ -45,6 +45,12 @@ export const StyledHeader = styled.header`
     z-index: 10;
   }
 
+  &.mobile-menu-open {
+    .mobile-header__cart-btn {
+      display: none;
+    }
+  }
+
   /* xs */
   /* @media (min-width: 475px) {} */
 
