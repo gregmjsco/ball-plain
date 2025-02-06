@@ -32,7 +32,7 @@ export default function Header() {
       <StyledHeader className={isMobileNavVisible ? "mobile-menu-open" : ""}>
         {/* Mobile Menu */}
         <img
-          src="../../public/BALogoMockWhite.png"
+          src="/../../public/BALogoMockWhite.png"
           alt="Ball Again logo in white"
           width="758"
           height="714"
