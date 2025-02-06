@@ -38,6 +38,32 @@ export default function Header() {
           height="714"
           className="header__logo"
         />
+        <button className="mobile-header__cart-btn" onClick={handleOpen}>
+          Cart ({productsCount} Items)
+        </button>
+        {isOpen && (
+          <Modal className="mobile-modal" onClose={handleClose}>
+            <h1>Shopping Cart</h1>
+            {productsCount > 0 ? (
+              <>
+                <p>Items in Cart:</p>
+                {cart.items.map((currentProduct, index) => (
+                  <CartProduct
+                    id={currentProduct.id}
+                    quantity={currentProduct.quantity}
+                    key={index}
+                  ></CartProduct>
+                ))}
+
+                <h1>Total: ¥{cart.getTotalCost().toFixed(2)}</h1>
+              </>
+            ) : (
+              <h3>Cart Empty</h3>
+            )}
+            <hr></hr>
+            <button className="modal-purchase-btn">Purchase</button>
+          </Modal>
+        )}
         <button
           onClick={handleBarsBtn}
           id="bars-btn"
@@ -56,9 +82,6 @@ export default function Header() {
               clipRule="evenodd"
             />
           </svg>
-        </button>
-        <button className="mobile-header__cart-btn" onClick={handleOpen}>
-          Cart ({productsCount} Items)
         </button>
 
         {/* Desktop Menu */}

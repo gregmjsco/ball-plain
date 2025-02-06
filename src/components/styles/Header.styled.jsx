@@ -31,6 +31,20 @@ export const StyledHeader = styled.header`
     color: white;
   }
 
+  .mobile-header__cart-btn {
+    /* position: fixed;
+    top: 20px;
+    right: 20px; */
+    background-color: var(--brand-light);
+    color: white;
+    font-size: ${({ theme }) => theme.sizes.base};
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+  }
+
   /* xs */
   /* @media (min-width: 475px) {} */
 
@@ -40,6 +54,10 @@ export const StyledHeader = styled.header`
   /* md */
   @media (min-width: 768px) {
     .header__bars {
+      display: none;
+    }
+
+    .mobile-header__cart-btn {
       display: none;
     }
 
@@ -112,20 +130,6 @@ export const StyledMobileHeader = styled.div`
   .mobile-nav__separator {
     border: 1px solid white;
     padding-right: 1.5rem;
-  }
-
-  .mobile-header__cart-btn {
-    position: fixed;
-    top: 20px; /* Adjusts the distance from the top */
-    right: 20px; /* Adjusts the distance from the right */
-    background-color: ${({ theme }) => theme.colors.brand}; /* Brand color */
-    color: white; /* Text color */
-    font-size: ${({ theme }) => theme.sizes.base};
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 10; /* Ensures it's on top of other elements */
   }
 `;
 
