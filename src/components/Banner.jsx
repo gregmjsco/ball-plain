@@ -1,6 +1,10 @@
 import { StyledBanner } from "./styles/Banner.styled";
 import { useRef } from "react";
 
+import photo1 from "/1.png";
+import photo2 from "/2.png";
+import photo3 from "/3.png";
+
 export default function Banner() {
   const sliderRef = useRef(null);
   const nextBtnRef = useRef(null);
@@ -24,9 +28,9 @@ export default function Banner() {
   return (
     <StyledBanner>
       <div className="slider" ref={sliderRef}>
-        <img src="/1.png" alt="" width="998" height="666" />
-        <img src="/2.png" alt="" width="997" height="667" />
-        <img src="/3.png" alt="" width="997" height="667" />
+        <img src={photo1} alt="" width="998" height="666" />
+        <img src={photo2} alt="" width="997" height="667" />
+        <img src={photo3} alt="" width="997" height="667" />
       </div>
       <div className="arrows">
         <a

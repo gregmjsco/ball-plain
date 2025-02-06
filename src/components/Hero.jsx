@@ -1,11 +1,13 @@
 import { StyledHero } from "./styles/Hero.styled";
 
+import heroPhoto from "/BALogoMockWhite.png";
+
 export default function Hero() {
   return (
     <StyledHero className="hero">
       <img
         className="hero__img"
-        src="../../public/BALogoMockWhite.png"
+        src={heroPhoto}
         alt="Ball Again logo in white"
         width="758"
         height="714"
