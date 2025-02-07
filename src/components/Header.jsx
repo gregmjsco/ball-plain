@@ -5,6 +5,8 @@ import { CartContext } from "../CartContext";
 import { h1 } from "motion/react-client";
 import CartProduct from "./CartProduct";
 
+import logo from "/BALogoMockWhite.png";
+
 export default function Header() {
   const cart = useContext(CartContext);
 
@@ -32,7 +34,7 @@ export default function Header() {
       <StyledHeader className={isMobileNavVisible ? "mobile-menu-open" : ""}>
         {/* Mobile Menu */}
         <img
-          src="/../../public/BALogoMockWhite.png"
+          src={logo}
           alt="Ball Again logo in white"
           width="758"
           height="714"
@@ -149,7 +151,7 @@ export default function Header() {
           Close
         </button>
         <img
-          src="../../public/BALogoMockWhite.png"
+          src={logo}
           alt="Ball Again logo in white"
           width="758"
           height="714"
